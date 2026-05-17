@@ -22,22 +22,20 @@
    Tip: https://coolors.co — para pumili ng color palette
         https://htmlcolorcodes.com — para makita ang hex codes
    ---------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --color-header:       #104F55;   /* Header at navigation bar */
-  --color-accent:       #01200F;   /* "Post a Job" button at mga highlight */
-  --color-page-bg:      #F4F3F2;   /* Background ng buong page */
-  --color-card-bg:      #F3F3F3;   /* Background ng mga card/box */
-  --color-heading:      #1E1E1E;   /* Kulay ng mga title at heading */
-  --color-body-text:    #212121;   /* Regular na body text */
-  --color-link:         #9EC5AB;   /* Mga clickable na links */
-  --color-tag-bg:       #E5E5E5;   /* Background ng mga tag/badge */
-  --color-tag-text:     #2E2E2E;   /* Text ng mga tag/badge */
-  --color-footer:       #32746D;   /* Footer background */
-  --showcase-overlay:   rgba(1, 21, 2, 0.3); /* Hero banner overlay
-                                               0.0 = transparent
-                                               0.9 = halos itim */
+  --color-header:       #0f172a;   /* dark slate header */
+  --color-accent:       #0070f3;   /* accessible royal blue CTA */
+  --color-page-bg:      #f8fafc;   /* very light page background */
+  --color-card-bg:      #ffffff;   /* white card background */
+  --color-heading:      #0b1220;   /* deep heading color */
+  --color-body-text:    #334155;   /* readable slate for body text */
+  --color-link:         var(--color-accent); /* links use primary accent */
+  --color-tag-bg:       #eef2ff;   /* subtle tag background */
+  --color-tag-text:     #0b1220;   /* tag text */
+  --color-footer:       #071233;   /* darker navy for footer */
+  --showcase-overlay:   rgba(11, 18, 35, 0.6); /* hero banner overlay */
 }
 
 
@@ -56,8 +54,8 @@
    ---------------------------------------------------------------- */
 
 :root {
-  --font-heading: 'Inknut Antiqua', 'Georgia', serif;      /* Para sa mga title at heading */
-  --font-body:    'Instrument Sans', 'Arial', sans-serif;   /* Para sa regular na text */
+  --font-heading: 'Poppins', 'Helvetica Neue', Arial, sans-serif; /* headings */
+  --font-body:    'Inter', 'Arial', sans-serif;                       /* body text */
 }
 
 
@@ -78,9 +76,12 @@
    ---------------------------------------------------------------- */
 
 :root {
-  --border-radius: 4px;
-  --card-shadow:   0 3px 4px rgba(0, 0, 0, 0.08);
+  --border-radius: 6px;
+  --card-shadow:   0 8px 22px rgba(2, 6, 23, 0.06);
 }
+
+/* Make small secondary gray text more readable */
+.text-gray-600 { color: #64748b !important; }
 
 
 
@@ -116,12 +117,43 @@ header {
   background-color: var(--color-header) !important;
 }
 
-.bg-yellow-500 {
-  background-color: var(--color-accent) !important;
+.bg-yellow-500,
+.bg-blue-500,
+.bg-red-500,
+.bg-red-600 {
+  color: #ffffff !important;
 }
 
-.text-yellow-500 {
-  color: var(--color-accent) !important;
+/* Stronger selectors for anchor elements with colored backgrounds */
+a.bg-red-500,
+a.bg-red-600,
+.bg-red-500.text-white,
+.bg-red-600.text-white,
+.bg-red-500 > a,
+.bg-red-600 > a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Ensure hover retains white text */
+a.bg-red-500:hover,
+a.bg-red-600:hover,
+.bg-red-500:hover,
+.bg-red-600:hover {
+  color: #ffffff !important;
+}
+}
+
+/* Ensure CTA buttons using accent have readable white text */
+.bg-yellow-500,
+.bg-blue-500 {
+  color: #ffffff !important;
+}
+
+/* Subtle link hover for professionalism */
+a:hover {
+  text-decoration: underline;
+  opacity: 0.95;
 }
 
 .hover\:bg-yellow-600:hover {
